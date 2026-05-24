@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - Go Solar</title>
+  <meta name="description" content="Create a Go Solar account and take the first step towards clean, sustainable energy." />
+  <link rel="stylesheet" href="../style/auth.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="nav">
+    <span class="logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD93D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      Go Solar
+    </span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="location.html">Locations</a>
+      <a href="benefits.html">Benefits</a>
+      <a href="why.html">Why Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="login.html">Login</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+    <span class="hamburger">&#9776;</span>
+  </nav>
+
+  <!-- SIGNUP SECTION -->
+  <section class="auth-container">
+    <div class="auth-card">
+      <h2>Create an Account</h2>
+      <p class="subtitle">Join us and start saving energy today.</p>
+      
+      <form id="signupForm" action="#" method="POST">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+        </div>
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required />
+        </div>
+        <div class="input-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required />
+        </div>
+        <button type="submit" class="auth-btn">Sign Up</button>
+      </form>
+
+      <div class="social-login">
+        <p>Or sign up with</p>
+        <button type="button" class="social-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" width="20" /> Google
+        </button>
+      </div>
+
+      <div class="auth-links">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Go Solar. All Rights Reserved.
+  </footer>
+
+  <script src="../script/signup.js"></script>
+</body>
+</html>

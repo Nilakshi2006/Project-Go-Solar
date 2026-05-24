@@ -1,0 +1,244 @@
+/* ===== GENERAL STYLES ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #F4F7FA;
+  color: #0B132B;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ===== NAVBAR ===== */
+#nav {
+  color: #F0F0F0;
+  background-color: #0B132B;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+  color: #FFD93D;
+  text-transform: uppercase;
+}
+
+#nav .logo svg {
+  animation: spinSlow 20s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #FFD93D;
+  text-shadow: 0 0 10px rgba(255, 217, 61, 0.4);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #FFD93D;
+  border-radius: 3px;
+  transition: width 0.3s ease, left 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 217, 61, 0.5);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.quote-btn {
+  background: linear-gradient(90deg, #FFD93D, #FF8C00);
+  color: #0B132B;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.quote-btn:hover {
+  background: linear-gradient(90deg, #FFC300, #E67300);
+  transform: scale(1.05);
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #FFD93D;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #0B132B;
+    flex-direction: column;
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+body {
+  background: #F4F7FA;
+  color: #0B132B;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.locations-page {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px 60px;
+  text-align: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(11, 19, 43, 0.09);
+}
+
+.locations-page h1 {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #0B132B;
+}
+
+.locations-page p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.locations-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.location-card {
+  background: #0B132B;
+  color: #FFD93D;
+  border-radius: 12px;
+  padding: 25px 20px;
+  max-width: 300px;
+  box-shadow: 0 6px 22px rgba(255, 217, 61, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.location-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 32px rgba(255, 217, 61, 0.5);
+}
+
+.location-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.location-card p {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Map Placeholder */
+.map-placeholder {
+  background: #e4e9f1;
+  border-radius: 12px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0B132B;
+  font-size: 1.3rem;
+  box-shadow: inset 0 0 15px rgba(11, 19, 43, 0.07);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .locations-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .location-card {
+    max-width: 90%;
+  }
+}
+footer {
+  background: #0B132B;
+  color: #FFD93D;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1.5px solid #FFD93D;
+}

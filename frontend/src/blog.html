@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solar Blog</title>
+  <link rel="stylesheet" href="../style/blog.css" />
+</head>
+<body>
+  <nav id="nav">
+    <span class="logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD93D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      Go Solar
+    </span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="location.html">Locations</a>
+      <a href="benefits.html">Benefits</a>
+      <a href="why.html">Why Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="login.html">Login</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+    <span class="hamburger">&#9776;</span>
+  </nav>
+
+  <section class="blog-section">
+    <h1>Latest From Our Solar Blog</h1>
+    <p>Explore tips, news, and insights about solar energy and sustainability.</p>
+
+    <input type="text" id="searchInput" placeholder="Search blog posts..." class="search-box" />
+
+    <button id="toggleAddPost" class="add-post-btn">Add New Post</button>
+
+    <div class="add-post-form" id="addPostForm" style="display:none;">
+      <input type="text" id="newTitle" placeholder="Post Title" />
+      <textarea id="newContent" placeholder="Post Content"></textarea>
+      <input type="text" id="newVideoLink" placeholder="YouTube Video URL" />
+      <button id="addPostBtn" class="submit-btn">Submit Post</button>
+    </div>
+
+    <ul class="blog-list" id="blogList"></ul>
+  </section>
+
+  <!-- Modal for video -->
+  <div id="video-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Undo Banner -->
+  <div id="undo-banner">Post deleted. <span id="undo-btn">Undo</span></div>
+
+  <script src="../script/blog.js"></script>
+</body>
+</html>
