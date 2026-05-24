@@ -14,9 +14,9 @@ Go Solar is a solar energy landing page and quote management application with a 
 ## Screenshots
 ### Homepage
 
-<img src="Images-Go%20Solar/Solar1.jpeg" width="800" alt="Homepage" />
+![Homepage](Images-Go%20Solar/Solar1.jpeg)
 
-![About Us](Images-Go%20Solar/Solar2.jpeg)
+<img src="Images-Go%20Solar/Solar2.jpeg" width="320" alt="About Us" />
 
 ![Locations](Images-Go%20Solar/Solar3.jpeg)
 
