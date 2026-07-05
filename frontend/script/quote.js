@@ -46,6 +46,8 @@ if (hamburger && navLinks) {
   });
 }
 
+const API_BASE_URL = window.__API_BASE_URL__ || "http://localhost:8080";
+
 document.getElementById("quoteForm").addEventListener("submit", async function(e) {
     e.preventDefault();
     
@@ -67,7 +69,7 @@ document.getElementById("quoteForm").addEventListener("submit", async function(e
     }
 
     try {
-        const response = await fetch("http://localhost:8080/api/quote", {
+        const response = await fetch(`${API_BASE_URL}/api/quote`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -46,6 +46,8 @@ if (hamburger && navLinks) {
   });
 }
 
+const API_BASE_URL = window.__API_BASE_URL__ || "http://localhost:8080";
+
 document.getElementById("loginForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
@@ -55,7 +57,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     };
 
     try {
-        const res = await fetch("http://localhost:8080/api/auth/login", {
+        const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
