@@ -40,16 +40,18 @@ a {
 #nav .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   font-weight: 800;
-  font-size: 1.6rem;
-  letter-spacing: 1.5px;
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  letter-spacing: 0.08rem;
   color: #FFD93D;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 #nav .logo svg {
   animation: spinSlow 20s linear infinite;
+  flex-shrink: 0;
 }
 
 @keyframes spinSlow {
@@ -205,6 +207,7 @@ a {
   border-radius: 14px;
   border: 3px solid #FFD93D;
   box-shadow: 0 4px 12px rgba(255, 217, 61, 0.15);
+  display: block;
 }
 
 .whyus-list h3 {
@@ -261,4 +264,33 @@ footer {
   padding: 20px 0;
   font-size: 0.9rem;
   border-top: 1.5px solid #FFD93D;
+}
+
+@media (max-width: 768px) {
+  .whyus {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .whyus-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .whyus-list li {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyus h1 {
+    font-size: 1.8rem;
+  }
+
+  .whyus p,
+  .whyus-list p {
+    font-size: 1rem;
+  }
 }
