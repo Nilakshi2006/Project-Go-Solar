@@ -8,12 +8,19 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 body {
   background: #F4F7FA;
   color: #0B132B;
   line-height: 1.5;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 a {
