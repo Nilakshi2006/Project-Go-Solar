@@ -10,5 +10,5 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://your-render-or-backend-url/api/:splat"
+  to = "https://gosolar-backend-07a7.onrender.com/api/:splat"
   status = 200
