@@ -31,7 +31,7 @@ const frontendPath = path.join(__dirname, "../frontend");
 app.use(express.static(frontendPath));
 
 // SPA fallback: serve index.html for non-API routes
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   if (req.path.startsWith("/api/")) return res.status(404).json({ msg: "Not Found" });
   res.sendFile(path.join(frontendPath, "index.html"));
 });
