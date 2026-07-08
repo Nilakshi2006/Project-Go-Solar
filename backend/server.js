@@ -26,6 +26,16 @@ connectDB();
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/quote", require("./routes/quoteRoutes"));
 
+// Serve frontend static files (if frontend is deployed in ../frontend)
+const frontendPath = path.join(__dirname, "../frontend");
+app.use(express.static(frontendPath));
+
+// SPA fallback: serve index.html for non-API routes
+app.get("*", (req, res) => {
+  if (req.path.startsWith("/api/")) return res.status(404).json({ msg: "Not Found" });
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
