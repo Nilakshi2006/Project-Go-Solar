@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Quote = require("../models/Quote");
+const Quote = require("../models/quote");
 const auth = require("../middleware/authMiddleware");
 
 // SAVE QUOTE (Protected)
