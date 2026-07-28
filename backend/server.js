@@ -8,7 +8,13 @@ const connectDB = require("./config/db");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+// Configure CORS: allow setting an explicit origin via CORS_ORIGIN env var (e.g., your Netlify URL)
+const allowedOrigin = process.env.CORS_ORIGIN || "*";
+app.use(cors({ origin: allowedOrigin }));
+
+if (process.env.NODE_ENV !== 'production') {
+  console.log(`CORS allowed origin: ${allowedOrigin}`);
+}
 
 const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) {
@@ -77,4 +83,25 @@ app.listen(PORT, () => {
   const url = `http://localhost:${PORT}/`;
   console.log(`Server running on port ${PORT}`);
   console.log(`Open the backend in your browser: ${url}`);
+});
+
+// Temporary endpoint to reveal the service's outbound IP address.
+// Deploy the app on Render and visit /whoami to see which public IP the service uses.
+const https = require('https');
+app.get('/whoami', (req, res) => {
+  // Use ipify to get public IP
+  https.get('https://api.ipify.org?format=json', (resp) => {
+    let data = '';
+    resp.on('data', chunk => data += chunk);
+    resp.on('end', () => {
+      try {
+        const parsed = JSON.parse(data);
+        return res.json({ outboundIp: parsed.ip });
+      } catch (e) {
+        return res.status(500).json({ error: 'Failed to parse IP response', details: e.message });
+      }
+    });
+  }).on('error', (err) => {
+    return res.status(500).json({ error: 'Failed to fetch outbound IP', details: err.message });
+  });
 });

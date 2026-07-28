@@ -1,3 +1,4 @@
 // Frontend configuration injected at build/runtime
 // Set the backend API base URL for fetch calls
-window.__API_BASE_URL__ = "https://gosolar-backend-07a7.onrender.com";
+// Updated to the live backend on Render
+window.__API_BASE_URL__ = "https://backend-gosolar-3g89.onrender.com";
